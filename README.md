@@ -1,14 +1,8 @@
 # MG-Flow
-=======
-
-Code for **No angle overlooked: a multi-view normalizing flow framework for automated visual inspection of gear surface defects**.
-
-MG-Flow is an unsupervised multi-view anomaly detection framework for automated visual inspection of gear surface defects. It trains only with defect-free samples and detects anomalous samples or regions through likelihood-based modeling of normal feature distributions with normalizing flows. The code supports experiments on a custom multi-view gear dataset and the public Real-IAD dataset.
-
-The method is designed for practical gear inspection scenarios where complex three-dimensional geometry makes single-view observation incomplete, while parallax, local cross-view misalignment, edge shadows, and complex backgrounds can weaken defect responses. MG-Flow uses complementary structural information from multiple views to compensate for missing surface observations, and introduces a Foreground-focused Energy Selection Attention (FESA) module to enhance key gear structure responses while suppressing background noise.
-
-For multi-view normalizing flow modeling, MG-Flow constructs a Multi-View Fusion Coupling (MVFC) block with a Cross-Block Scale-Translation (CBST) module. CBST performs cross-view block-level retrieval and intra-block fine-grained alignment inside the affine coupling layers, reducing misalignment noise and reliably integrating complementary local structures into normal feature distribution modeling. Experiments reported in the paper show strong detection, localization, and generalization performance on the custom multi-view gear dataset and Real-IAD.
-
+This repository provides the official implementation of **MG-Flow**, an unsupervised multi-view anomaly detection framework for industrial surface defect inspection.
+MG-Flow is designed to learn normal feature distributions from defect-free samples and identify anomalous samples or regions through likelihood-based modeling with normalizing flows. By using multi-view images, the method can exploit complementary structural information from different viewpoints, which helps improve inspection stability when single-view observations are incomplete or affected by occlusion, viewpoint variation, local misalignment, shadows, or background interference.
+The framework enhances foreground object features with the Foreground-focused Energy Selection Attention (FESA) module and performs multi-view feature distribution modeling through a normalizing flow architecture. To improve cross-view interaction, MG-Flow introduces a Multi-View Fusion Coupling (MVFC) block with a Cross-Block Scale-Translation (CBST) module, enabling block-level cross-view retrieval and fine-grained local alignment inside the affine coupling layers.
+This code supports experiments on the custom multi-view industrial defect dataset used in our work and can also be adapted to public multi-view industrial anomaly detection datasets such as Real-IAD.
 
 ## Installation
 
