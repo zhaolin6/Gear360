@@ -1,8 +1,7 @@
-# MG-Flow
-This repository provides the official implementation of **MG-Flow**, an unsupervised multi-view anomaly detection framework for industrial surface defect inspection.
-MG-Flow is designed to learn normal feature distributions from defect-free samples and identify anomalous samples or regions through likelihood-based modeling with normalizing flows. By using multi-view images, the method can exploit complementary structural information from different viewpoints, which helps improve inspection stability when single-view observations are incomplete or affected by occlusion, viewpoint variation, local misalignment, shadows, or background interference.
-The framework enhances foreground object features with the Foreground-focused Energy Selection Attention (FESA) module and performs multi-view feature distribution modeling through a normalizing flow architecture. To improve cross-view interaction, MG-Flow introduces a Multi-View Fusion Coupling (MVFC) block with a Cross-Block Scale-Translation (CBST) module, enabling block-level cross-view retrieval and fine-grained local alignment inside the affine coupling layers.
-This code supports experiments on the custom multi-view industrial defect dataset used in our work and can also be adapted to public multi-view industrial anomaly detection datasets such as Real-IAD.
+
+# Gear360
+
+This repository provides the official implementation of **Gear360: A Multi-View Normalizing Flow Framework for Full-Surface Gear Defect Detection**. Gear360 is designed for full-surface gear defect detection under multi-view visual inspection, where a single view may fail to cover all critical surface regions and multiple views may suffer from parallax, local misalignment, background interference, and illumination variations. Trained only on defect-free samples, Gear360 exploits complementary structural information from multi-view images and models normal feature distributions with normalizing flows for sample-level defect discrimination and pixel-level defect localization. Specifically, a Foreground-focused Energy Selection Attention (FESA) module is introduced to enhance gear structure-related responses and suppress background interference. A Multi-View Fusion Coupling (MVFC) block with a Cross-Block Scale-Translation (CBST) module is further designed to perform cross-view block-level retrieval and intra-block fine-grained alignment, thereby reducing cross-view misalignment and incorporating complementary multi-view structural information into affine coupling parameter prediction. The framework is evaluated on our custom three-view gear surface defect dataset and the public five-view Real-IAD dataset, demonstrating strong detection and localization performance across different industrial objects and view configurations. Gear360 contains only **13.49 M parameters** and achieves an inference speed of **52.07 FPS**, showing good potential for online industrial visual inspection.
 
 ## Installation
 
@@ -10,7 +9,7 @@ Create the environment:
 
 ```bash
 conda env create --file environment.yml
-conda activate mgflow
+conda activate Gear360
 ```
 
 The code is mainly tested with CUDA. If your GPU or CUDA setting is different, please check the device setting in `config.py`.
