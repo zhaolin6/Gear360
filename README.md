@@ -1,2 +1,2 @@
-# MG-Flow
-MG-Flow is an unsupervised multi-view anomaly detection framework for industrial surface defect inspection.
+# Gear
+Gear360: A Multi-View Normalizing Flow Framework for Full-Surface Gear Defect Detection
